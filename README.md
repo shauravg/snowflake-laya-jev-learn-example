@@ -6,3 +6,8 @@ Instructions
 2. Create a compute pool (recommended NV_S GPU with 2 nodes)
 3. Run the notebook one by one
 4. Run the cleanup file and suspend the compute pool
+
+
+Credits
+Please note, the notebook is credited primarily from this repo: https://github.com/NandhaKishorM/laya/blob/main/notebooks/laya_finetune_typed_decisions_2xT4_kaggle.ipynb
+
