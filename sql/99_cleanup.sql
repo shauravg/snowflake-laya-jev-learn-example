@@ -1,0 +1,19 @@
+-- MANUAL CLEANUP ONLY. No cleanup runs automatically.
+-- V2 default: JEV_ZENDESK_LAB_V2; do not remove historical JEV_BUILDER_LAB artifacts.
+-- The interrupted v1 notebook run af05cb92319e has unverified completion/resource state.
+-- Inspect its exact job/service in the demo account before suspending shared resources.
+-- First suspend the exact service printed by the notebook (service owner):
+-- ALTER SERVICE <DATABASE>.ML.<RUN_SERVICE> SUSPEND;
+-- Optional: drop that service once no longer needed:
+-- DROP SERVICE <DATABASE>.ML.<RUN_SERVICE>;
+-- Stop the GPU notebook runtime separately in the UI.
+-- Suspend only a dedicated lab compute pool that nobody else is using:
+-- ALTER COMPUTE POOL <DEDICATED_LAB_POOL> SUSPEND;
+-- Deleting tables or revoking access does not unlearn trained weights.
+-- After reviewing the exact disposable database and exporting any wanted results:
+-- DROP DATABASE <EXACT_LAB_DATABASE>;
+-- As role administrator, remove the lab roles only after reviewing their grants:
+-- DROP ROLE JEV_LAB_CONSUMER;
+-- DROP ROLE JEV_LAB_ML;
+-- DROP ROLE JEV_LAB_ANALYST;
+-- DROP ROLE JEV_LAB_STEWARD;
